@@ -1,9 +1,9 @@
-﻿let countIncrease (x, y) = match x < y with | true -> 1 | false -> 0
+﻿let countIncrease x y = match x < y with | true -> 1 | false -> 0
 
 let rec countIncreases = function 
     | [] -> 0
     | _::[] -> 0
-    | a::b::t -> countIncrease(a, b) + countIncreases(b::t)
+    | a::b::t -> countIncrease a b + countIncreases(b::t)
 
 // read all lines of a file, convert to string list, map to int list
 open System.IO
