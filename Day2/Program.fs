@@ -4,10 +4,11 @@
 
 let parseLine (line:string) = line.Split " " |> toTuple
 
-// read all lines of a file, convert to string list, map to int list
+// read all lines of a file, convert to string list, convert it to a tuple ("command", amount:int)
 open System.IO
 let input = File.ReadAllLines(@"input.txt") |> Seq.toList |> List.map parseLine
 
+// Active Pattern
 let (|Forward|Down|Up|) value =
     if "forward".Equals(value) then Forward
     elif "down".Equals(value) then Down
